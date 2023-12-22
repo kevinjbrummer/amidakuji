@@ -1,6 +1,6 @@
 name: s3-deploy-sample
 on: 
-  push:
+  pull_request:
     branches:
       - main
 
