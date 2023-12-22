@@ -1,17 +1,17 @@
 name: s3-deploy-sample
 on: 
-  pull_request:
+  push:
     branches:
       - main
 
-permissions:
-  id-token: write
-  contents: read
 
 jobs:
   UploadStaticFiles:
     name: Upload Static Files
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - uses: aws-actions/configure-aws-credentials@v1.7.0
